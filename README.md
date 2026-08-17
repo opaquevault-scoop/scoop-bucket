@@ -6,8 +6,10 @@ Scoop manifests for the [OpaqueVault](https://opaquevault.com) CLI (`ov`) — a 
 
 ```powershell
 scoop bucket add opaquevault https://github.com/opaquevault-scoop/scoop-bucket
-scoop install ov
+scoop install opaquevault/ov
 ```
+
+Use the bucket-qualified name — a bare `scoop install ov` matches the `ov` manifest in Scoop's default `main` bucket, an unrelated terminal pager.
 
 ## Get started
 
@@ -18,7 +20,7 @@ ov auth login    # authenticate
 
 `ov init` auto-detects Claude Code, Cursor, Windsurf, GitHub Copilot, Aider, Zed, Continue, and Cline, and writes the appropriate rules file for each.
 
-The full CLI (`ov auth`, `ov secret`, `ov run`, `ov scan`, `ov init`) runs natively on Windows 10 and 11. The MCP bridge for Claude Code / Cursor currently requires WSL2 — see the [installation guide](https://opaquevault.com/docs/cli/installation) for the interim setup and what's in development.
+The CLI (`ov auth`, `ov secret`, `ov run`, `ov scan`, `ov init`) runs natively on Windows 10 and 11. The background agent (`ov agent`) is not yet built for Windows, so `ov run` prompts for your master password each time. The MCP bridge for Claude Code / Cursor currently requires WSL2 — see the [installation guide](https://opaquevault.com/docs/cli/installation) for the interim setup and what's in development.
 
 - Quickstart: https://opaquevault.com/docs/quickstart
 - Full installation guide: https://opaquevault.com/docs/cli/installation
@@ -26,24 +28,19 @@ The full CLI (`ov auth`, `ov secret`, `ov run`, `ov scan`, `ov init`) runs nativ
 ## Update
 
 ```powershell
-scoop update ov
+scoop update opaquevault/ov
 ```
 
 ## Uninstall
 
 ```powershell
-scoop uninstall ov
+scoop uninstall opaquevault/ov
 scoop bucket rm opaquevault
 ```
 
 ## Release verification
 
-The manifest downloads binaries from `releases.opaquevault.com` and pins their SHA-256 hashes. Independently of Scoop's checks, every release's checksums file is signed with this minisign key:
-
-```
-untrusted comment: minisign public key F89BAB08772C1C0B
-RWQLHCx3CKub+D3Wnc1zX/YBVr1fJD5SrK08d2xp4XoTQipbFET8V0fU
-```
+The manifest downloads binaries from `releases.opaquevault.com` and pins their SHA-256 hashes. Independently of Scoop's checks, every release's checksums file is signed with the OpaqueVault minisign key, published at [opaquevault.com/.well-known/ov-release.pub](https://opaquevault.com/.well-known/ov-release.pub).
 
 How to verify, and what to do if verification fails: https://opaquevault.com/docs/security/release-signing
 
