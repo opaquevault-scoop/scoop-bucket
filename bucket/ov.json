@@ -10,6 +10,6 @@
         }
     },
     "homepage": "https://opaquevault.com",
-    "license": "MIT",
+    "license": "BUSL-1.1",
     "description": "Zero-knowledge, quantum-safe secret manager for AI coding agents"
 }
