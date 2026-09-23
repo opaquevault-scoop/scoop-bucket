@@ -1,12 +1,12 @@
 {
-    "version": "0.19.0",
+    "version": "0.20.0",
     "architecture": {
         "64bit": {
-            "url": "https://releases.opaquevault.com/v0.19.0/ov_windows_amd64.zip",
+            "url": "https://releases.opaquevault.com/v0.20.0/ov_windows_amd64.zip",
             "bin": [
                 "ov.exe"
             ],
-            "hash": "cb19551cc272502636c72d85298be126e28be811a3a99d5e75b3b463026919bf"
+            "hash": "c17d5e43e97dc905f48ab896f08f8b32f314c5cac4514dd8b02b8187ca1e75b7"
         }
     },
     "homepage": "https://opaquevault.com",
